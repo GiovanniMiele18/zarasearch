@@ -1,5 +1,19 @@
-{
-  "name": "Pullover con bottoni sulle spalle",
-  "price": "29,95€",
-  "description": "Pullover a maniche lunghe con bottoni decorativi sulle spalle. Disponibile in diversi colori."
-}
+(async () => {
+    try {
+        const res = await fetch(
+            "https://www.zara.com/it/it/pullover-con-bottoni-spalle-p03920135.html?v1=424938363&ajax=true",
+            {
+                method: "GET",
+                headers: {
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, come Gecko) Chrome/80.0.3987.149 Safari/537.36",
+                    "X-Requested-With": "XMLHttpRequest"
+                }
+            }
+        );
+
+        const text = await res.text(); // Usa text() invece di json() per controllare il formato della risposta
+        console.log(text); // Stampa la risposta per capire il formato
+    } catch (error) {
+        console.log("Errore in js:", error.message);
+    }
+})();

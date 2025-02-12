@@ -2,7 +2,8 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Dettagli del Prodotto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dettagli Prodotto</title>
 </head>
 <body>
     <h1 id="product-name"></h1>
@@ -14,9 +15,9 @@
         fetch('product_data.json')
             .then(response => response.json())
             .then(data => {
-                // Aggiorna il contenuto della pagina con i dati del prodotto
+                // Inserisce i dati nella pagina
                 document.getElementById('product-name').textContent = data.name;
-                document.getElementById('product-price').textContent = data.price;
+                document.getElementById('product-price').textContent = "Prezzo: " + data.price;
                 document.getElementById('product-description').textContent = data.description;
             })
             .catch(error => console.error('Errore nel caricamento dei dati:', error));

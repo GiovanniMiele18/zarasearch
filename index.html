@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zara Product</title>
+</head>
+<body>
+    <h1 id="product-name">Caricamento...</h1>
+    <p id="product-price"></p>
+    <p id="product-description"></p>
+
+    <script>
+        fetch("https://cors-anywhere.herokuapp.com/https://www.zara.com/it/it/pullover-con-bottoni-spalle-p03920135.html?v1=424938363&ajax=true")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("product-name").textContent = data.name || "Nome non disponibile";
+                document.getElementById("product-price").textContent = "Prezzo: " + (data.price || "N/A");
+                document.getElementById("product-description").textContent = data.description || "Nessuna descrizione disponibile.";
+            })
+            .catch(error => console.error("Errore nel caricamento:", error));
+    </script>
+</body>
+</html>

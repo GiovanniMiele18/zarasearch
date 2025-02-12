@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Dettagli del Prodotto</title>
+</head>
+<body>
+    <h1 id="product-name"></h1>
+    <p id="product-price"></p>
+    <p id="product-description"></p>
+
+    <script>
+        // Carica il file JSON
+        fetch('product_data.json')
+            .then(response => response.json())
+            .then(data => {
+                // Aggiorna il contenuto della pagina con i dati del prodotto
+                document.getElementById('product-name').textContent = data.name;
+                document.getElementById('product-price').textContent = data.price;
+                document.getElementById('product-description').textContent = data.description;
+            })
+            .catch(error => console.error('Errore nel caricamento dei dati:', error));
+    </script>
+</body>
+</html>

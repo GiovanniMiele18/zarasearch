@@ -1,4 +1,4 @@
-fetch("https://TUO-SITO.altervista.org/zara.php")
+fetch("https://songgenerated.altervista.org/zara.php")
     .then(res => res.json())
     .then(data => {
         console.log("Dati ricevuti:", data);

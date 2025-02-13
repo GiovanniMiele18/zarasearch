@@ -6,21 +6,9 @@
     <title>Dettagli Prodotto</title>
 </head>
 <body>
-    <h1 id="product-name"></h1>
-    <p id="product-price"></p>
-    <p id="product-description"></p>
+  <h2>Taglie disponibili:</h2>
+<p id="taglie">Caricamento...</p>
 
-    <script>
-        // Carica il file JSON
-        fetch('product_data.json')
-            .then(response => response.json())
-            .then(data => {
-                // Inserisce i dati nella pagina
-                document.getElementById('product-name').textContent = data.name;
-                document.getElementById('product-price').textContent = "Prezzo: " + data.price;
-                document.getElementById('product-description').textContent = data.description;
-            })
-            .catch(error => console.error('Errore nel caricamento dei dati:', error));
-    </script>
+<script src="script.js"></script>
 </body>
 </html>
